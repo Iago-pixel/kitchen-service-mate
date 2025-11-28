@@ -31,3 +31,14 @@ class Dish(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    dishes = models.ManyToManyField(Dish, related_name='ingredients')
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
