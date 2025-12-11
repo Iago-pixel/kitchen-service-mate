@@ -19,6 +19,9 @@ class Cook(AbstractUser):
     class Meta:
         ordering = ("username", )
 
+    def __str__(self):
+        return f"{self.username} - {self.first_name} {self.last_name}"
+
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=200, unique=True)
