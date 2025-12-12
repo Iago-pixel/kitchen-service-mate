@@ -6,12 +6,12 @@
     <a href="#">All cooks</a>
   </li>
   <li>
-    <a href="#">All dishes</a>
+    <a href="{% url 'menu:dish-list' %}">All dishes</a>
   </li>
   <li>
-    <a href="#">All types of dishes</a>
+    <a href="{% url 'menu:dish-type-list' %}">All types of dishes</a>
   </li>
   <li>
-    <a href="#">All ingredients</a>
+    <a href="{% url 'menu:ingredient-list' %}">All ingredients</a>
   </li>
 </ul>

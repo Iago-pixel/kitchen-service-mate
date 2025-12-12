@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Dish list</h1>
+  <ul>
+    {% for dish in dish_list %}
+      <li><a href="#">{{ dish.name }} ({{ dish.price }}, {{ dish.dish_type }})</a></li>
+    {% empty %}
+      <li>No dishes available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}]

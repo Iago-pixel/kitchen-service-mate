@@ -19,3 +19,11 @@ def index(request):
 
 class DishTypeListView(generic.ListView):
     model = DishType
+
+
+class IngredientListView(generic.ListView):
+    model = Ingredient
+
+
+class DishListView(generic.ListView):
+    model = Dish
