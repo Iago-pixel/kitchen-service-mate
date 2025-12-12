@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Dish Type list</h1>
+  <ul>
+    {% for dishtype in dishtype_list %}
+      <li>{{ dishtype.name }}</li>
+    {% empty %}
+      <li>No types of dishes available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
