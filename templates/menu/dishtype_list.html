@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Dish Type list</h1>
+  <h1>Dish Type list <a style="float: right;" href="{% url 'menu:dish-type-create' %}">+</a></h1>
   <ul>
     {% for dishtype in dishtype_list %}
       <li>{{ dishtype.name }}</li>

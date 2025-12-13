@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 from .models import Dish, Cook, DishType, Ingredient
 
@@ -25,9 +26,23 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 10
 
 
+class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
+    model = DishType
+    fields = "__all__"
+    template_name = "menu/dishtype_form.html"
+    success_url = reverse_lazy("menu:dish-type-list")
+
+
 class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     paginate_by = 10
+
+
+class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Ingredient
+    fields = "__all__"
+    template_name = "menu/ingredient_form.html"
+    success_url = reverse_lazy("menu:ingredient-list")
 
 
 class DishListView(LoginRequiredMixin, generic.ListView):

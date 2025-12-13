@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Ingredient list</h1>
+  <h1>Ingredient list <a style="float: right;" href="{% url 'menu:ingredient-create' %}">+</a></h1>
   <ul>
     {% for ingredient in ingredient_list %}
       <li>{{ ingredient.name }}</li>
