@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ dish.name }}</h1>
+  <p>Type: {{ dish.dish_type.name }}</p>
+  <p>Description: {{ dish.description }}</p>
+  <p>Price: ${{ dish.price }}</p>
+
+  <h2>Ingredients</h2>
+  <ul>
+    {% for ingredient in dish.ingredients.all %}
+      <li>{{ ingredient.name }}</li>
+    {% empty %}
+      <li>No ingredients listed.</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'menu:dish-list' %}">Back to Dish List</a>
+{% endblock %}
