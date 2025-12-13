@@ -19,15 +19,18 @@ def index(request):
 
 class DishTypeListView(generic.ListView):
     model = DishType
+    paginate_by = 10
 
 
 class IngredientListView(generic.ListView):
     model = Ingredient
+    paginate_by = 10
 
 
 class DishListView(generic.ListView):
     model = Dish
     queryset = Dish.objects.select_related("dish_type")
+    paginate_by = 10
 
 
 class DishDetailView(generic.DetailView):
