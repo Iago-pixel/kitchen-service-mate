@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 
 from .models import Dish, Cook, DishType, Ingredient
 
+
 @login_required
 def index(request):
     num_dishes = Dish.objects.count()
