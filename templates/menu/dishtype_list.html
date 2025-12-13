@@ -2,11 +2,26 @@
 
 {% block content %}
   <h1>Dish Type list <a style="float: right;" href="{% url 'menu:dish-type-create' %}">+</a></h1>
-  <ul>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
     {% for dishtype in dishtype_list %}
-      <li>{{ dishtype.name }}</li>
+      <tr>
+        <td>{{ dishtype.name }}</td>
+        <td>
+          <a href="{% url 'menu:dish-type-update' dishtype.pk %}">EDIT</a>
+        </td>
+        <td>
+          <a href="{% url 'menu:dish-type-delete' dishtype.pk %}">DELETE</a>
+        </td>
+      </tr>
     {% empty %}
-      <li>No types of dishes available.</li>
+      <tr>
+        <td colspan="3">No dish types available.</td>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 {% endblock %}

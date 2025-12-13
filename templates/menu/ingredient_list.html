@@ -2,11 +2,26 @@
 
 {% block content %}
   <h1>Ingredient list <a style="float: right;" href="{% url 'menu:ingredient-create' %}">+</a></h1>
-  <ul>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
     {% for ingredient in ingredient_list %}
-      <li>{{ ingredient.name }}</li>
+      <tr>
+        <td>{{ ingredient.name }}</td>
+        <td>
+          <a href="{% url 'menu:ingredient-update' ingredient.pk %}">EDIT</a>
+        </td>
+        <td>
+          <a href="{% url 'menu:ingredient-delete' ingredient.pk %}">DELETE</a>
+        </td>
+      </tr>
     {% empty %}
-      <li>No ingredients available.</li>
+      <tr>
+        <td colspan="3">No ingredients available.</td>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 {% endblock %}
