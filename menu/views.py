@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import Dish, Cook, DishType, Ingredient
-from .forms import CookCreationForm
+from .forms import CookCreationForm, DishForm
 
 
 @login_required
@@ -81,12 +81,12 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
-    fields = "__all__"
+    form_class = DishForm
 
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Dish
-    fields = "__all__"
+    form_class = DishForm
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
