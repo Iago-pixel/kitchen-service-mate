@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import Dish, Cook, DishType, Ingredient
+from .forms import CookCreationForm
 
 
 @login_required
@@ -107,6 +108,6 @@ class CookDetailView(LoginRequiredMixin, generic.DetailView):
 
 class CookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Cook
-    fields = ["username", "first_name", "last_name", "years_of_experience", "password"]
+    form_class = CookCreationForm
     template_name = "menu/cook_form.html"
     success_url = reverse_lazy("menu:cook-list")
