@@ -31,14 +31,12 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 class DishTypeCreateView(LoginRequiredMixin, generic.CreateView):
     model = DishType
     fields = "__all__"
-    template_name = "menu/dishtype_form.html"
     success_url = reverse_lazy("menu:dish-type-list")
 
 
 class DishTypeUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = DishType
     fields = "__all__"
-    template_name = "menu/dishtype_form.html"
     success_url = reverse_lazy("menu:dish-type-list")
 
 
@@ -56,14 +54,12 @@ class IngredientListView(LoginRequiredMixin, generic.ListView):
 class IngredientCreateView(LoginRequiredMixin, generic.CreateView):
     model = Ingredient
     fields = "__all__"
-    template_name = "menu/ingredient_form.html"
     success_url = reverse_lazy("menu:ingredient-list")
 
 
 class IngredientUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Ingredient
     fields = "__all__"
-    template_name = "menu/ingredient_form.html"
     success_url = reverse_lazy("menu:ingredient-list")
 
 
@@ -86,15 +82,11 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 class DishCreateView(LoginRequiredMixin, generic.CreateView):
     model = Dish
     fields = "__all__"
-    template_name = "menu/dish_form.html"
-    success_url = reverse_lazy("menu:dish-list")
 
 
 class DishUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Dish
     fields = "__all__"
-    template_name = "menu/dish_form.html"
-    success_url = reverse_lazy("menu:dish-list")
 
 
 class CookListView(LoginRequiredMixin, generic.ListView):
