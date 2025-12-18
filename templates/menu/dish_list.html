@@ -2,16 +2,33 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>Dish list <a style="float: right;" href="{% url 'menu:dish-create' %}">+</a></h1>
+  <h1>Dish list <a style="float: right;" class="btn btn-secondary" href="{% url 'menu:dish-create' %}">+</a></h1>
   <form action="" method="get" class="form-inline">
     {{ search_form|crispy }}
     <button type="submit" class="btn btn-secondary">🔎</button>
   </form>
-  <ul>
-    {% for dish in dish_list %}
-      <li><a href="{{ dish.get_absolute_url }}">{{ dish.name }} ({{ dish.price }}, {{ dish.dish_type }})</a></li>
-    {% empty %}
-      <li>No dishes available.</li>
-    {% endfor %}
-  </ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dish in dish_list %}
+        <tr>
+          <td>{{ dish.name }}</td>
+          <td>{{ dish.dish_type.name }}</td>
+          <td>${{ dish.price }}</td>
+          <td><a href="{% url 'menu:dish-detail' dish.pk %}">View</a></td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No dishes found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}

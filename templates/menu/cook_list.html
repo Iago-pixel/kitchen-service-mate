@@ -2,11 +2,24 @@
 
 {% block content %}
   <h1>Cook list</h1>
-  <ul>
+  <table class="table">
+    <tr>
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Years of Experience</th>
+      <th></th>
+    </tr>
     {% for cook in cook_list %}
-      <li><a href="{{ cook.get_absolute_url }}">{{ cook.username }}</a></li>
+      <tr>
+        <td>{{ cook.first_name }} {{ cook.last_name }}</td>
+        <td>{{ cook.username }}</td>
+        <td>{{ cook.years_of_experience }}</td>
+        <td><a href="{{ cook.get_absolute_url }}">View</a></td>
+      </tr>
     {% empty %}
-      <li>No cooks available.</li>
+      <tr>
+        <td colspan="3">No cooks available.</td>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 {% endblock %}
