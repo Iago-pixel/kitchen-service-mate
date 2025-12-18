@@ -53,7 +53,7 @@ class Dish(models.Model):
         ordering = ("name",)
 
     def __str__(self):
-        return f"{self.name} (price: {self.price}, type: {self.dish_type.name})"
+        return f"{self.name} (price: {'{:.2f}'.format(self.price)}, type: {self.dish_type.name})"
 
     def get_absolute_url(self):
         return reverse("menu:dish-detail", args=[str(self.id)])
