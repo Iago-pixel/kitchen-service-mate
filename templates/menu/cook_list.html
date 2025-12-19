@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Cook list</h1>
+  <h1>Cook list <a style="float: right;" class="btn btn-secondary" href="{% url 'menu:cook-create' %}">+</a></h1>
   <table class="table">
     <tr>
       <th>Full Name</th>
