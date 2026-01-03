@@ -1,3 +1,8 @@
+:root {
+  --font-green: #147601;
+  --font-title: 'Lobster', sans-serif;
+}
+
 .navbar-cotainer {
   background-color: #d26415;
   margin: 30px;
@@ -34,7 +39,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .user-item {
+  .hidden-in-tablet {
     display: none;
   }
 }
