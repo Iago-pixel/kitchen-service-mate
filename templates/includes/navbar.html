@@ -27,7 +27,7 @@
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0">
         {% if user.is_authenticated %}
-          <li class="nav-item user-item">
+          <li class="nav-item user-item hidden-in-tablet">
             <span class="nav-link" style="color: #ffffff;">
               <img src="{% static 'img/profile.png' %}" alt="profile picture" width="20" height="20">
               User: {{ user.username }}
