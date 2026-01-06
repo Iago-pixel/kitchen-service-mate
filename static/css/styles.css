@@ -38,6 +38,44 @@
   color: #000;
 }
 
+.add-link {
+  color: #d26415;
+  font-size: 1.5rem;
+}
+
+.add-link:hover {
+  color: #147601;
+}
+
+.view-link {
+  color: #137200;
+}
+
+.view-link:hover {
+  color: #d26415;
+}
+
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+th, td {
+  border-radius: 50px;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+th {
+  background-color: #F3C29E;
+  color: #d26415;
+}
+
+td {
+  background-color: #CEF7C5;
+  color: #137200;
+}
+
 @media only screen and (max-width: 768px) {
   .hidden-in-tablet {
     display: none;
