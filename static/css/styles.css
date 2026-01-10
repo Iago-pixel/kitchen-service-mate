@@ -1,10 +1,13 @@
 :root {
   --font-green: #147601;
   --font-title: 'Lobster', sans-serif;
+  --orange-light: rgb(210, 100, 21, 0.2);
+  --orange-light-2: #F3C29E;
+  --orange: #d26415;
 }
 
-.navbar-cotainer {
-  background-color: #d26415;
+.navbar-container {
+  background-color: var(--orange);
   margin: 30px;
   border-radius: 20px;
 }
@@ -39,7 +42,7 @@
 }
 
 .add-link {
-  color: #d26415;
+  color: var(--orange);
   font-size: 1.5rem;
 }
 
@@ -52,7 +55,7 @@
 }
 
 .view-link:hover {
-  color: #d26415;
+  color: var(--orange);
 }
 
 table {
@@ -67,8 +70,8 @@ th, td {
 }
 
 th {
-  background-color: #F3C29E;
-  color: #d26415;
+  background-color: var(--orange-light-2);
+  color: var(--orange);
 }
 
 td {
