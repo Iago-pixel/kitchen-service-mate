@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 {% load crispy_forms_filters %}
+{% load static %}
 
 {% block content %}
-  <h1>Dish list <a style="float: right;" class="btn btn-secondary" href="{% url 'menu:dish-create' %}">+</a></h1>
+  <div class="d-flex justify-content-evenly">
+    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
+    <h1 class="d-flex align-items-center" style="font-family: var(--font-title); color: var(--font-green);">Dish list <img style="margin-left: 10px;" src="{% static 'img/cook_img.png' %}" alt="" height="45px"></h1>
+    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
+  </div> 
   <form action="" method="get" class="form-inline">
     {{ search_form|crispy }}
-    <button type="submit" class="btn btn-secondary">🔎</button>
+    <input type="submit" class="btn btn-secondary" value="🔎">
   </form>
-  <table class="table">
+  <table class="mx-auto">
     <thead>
       <tr>
         <th>Name</th>
         <th>Type</th>
         <th>Price</th>
-        <th></th>
+        <th style="background-color: transparent;">
+          <a class="add-link" href="{% url 'menu:dish-create' %}"><i class="fa-solid fa-plus"></i></a>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -22,11 +29,11 @@
           <td>{{ dish.name }}</td>
           <td>{{ dish.dish_type.name }}</td>
           <td>${{ dish.price }}</td>
-          <td><a href="{% url 'menu:dish-detail' dish.pk %}">View</a></td>
+          <td><a href="{% url 'menu:dish-detail' dish.pk %}" class="view-link">View</a></td>
         </tr>
       {% empty %}
         <tr>
-          <td colspan="4">No dishes found.</td>
+          <td colspan="3">No dishes found.</td>
         </tr>
       {% endfor %}
     </tbody>
