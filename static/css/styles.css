@@ -79,6 +79,15 @@ td {
   color: #137200;
 }
 
+.container-search input {
+  border-radius: 50px 0 0 50px;
+  width: 300px;
+}
+
+.container-search input::placeholder {
+  color: #777
+}
+
 @media only screen and (max-width: 768px) {
   .hidden-in-tablet {
     display: none;
