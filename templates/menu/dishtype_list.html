@@ -1,26 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>Dish Type list <a style="float: right;" class="btn btn-secondary" href="{% url 'menu:dish-type-create' %}">+</a></h1>
-  <table class="table">
+  <div class="d-flex justify-content-evenly">
+    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
+    <h1 class="d-flex align-items-center" style="font-family: var(--font-title); color: var(--font-green);">Dish Type list <img style="margin-left: 10px;" src="{% static 'img/cook_img.png' %}" alt="" height="45px"></h1>
+    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
+  </div>
+  <table class="mx-auto">
     <tr>
       <th>Name</th>
       <th>Edit</th>
-      <th>Delete</th>
+      <th style="background-color: transparent;">
+        <a class="add-link" href="{% url 'menu:dish-type-create' %}"><i class="fa-solid fa-plus"></i></a>
+      </th>
     </tr>
     {% for dishtype in dishtype_list %}
       <tr>
         <td>{{ dishtype.name }}</td>
         <td>
-          <a href="{% url 'menu:dish-type-update' dishtype.pk %}">EDIT</a>
+          <a href="{% url 'menu:dish-type-update' dishtype.pk %}" class="view-link">Edit</a>
         </td>
-        <td>
-          <a href="{% url 'menu:dish-type-delete' dishtype.pk %}">DELETE</a>
+        <td style="background-color: transparent;">
+          <a href="{% url 'menu:dish-type-delete' dishtype.pk %}" style="color: red"><i class="fa-regular fa-trash-can"></i></a>
         </td>
       </tr>
     {% empty %}
       <tr>
-        <td colspan="3">No dish types available.</td>
+        <td colspan="2">No dish types available.</td>
       </tr>
     {% endfor %}
   </table>
