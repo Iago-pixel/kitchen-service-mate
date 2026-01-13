@@ -79,8 +79,13 @@ td {
   color: #137200;
 }
 
-.form div {
-  margin-bottom: 15px;
+.login div {
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.login label {
+  margin-bottom: 5px;
 }
 
 .container-search input {
