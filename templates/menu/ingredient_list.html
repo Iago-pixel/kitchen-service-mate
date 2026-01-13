@@ -11,7 +11,7 @@
     <tr>
       <th>Name</th>
       <th>Edit</th>
-      <th style="background-color: transparent;">
+      <th class="bg-transparent">
         <a class="add-link" href="{% url 'menu:ingredient-create' %}"><i class="fa-solid fa-plus"></i></a>
       </th>
     </tr>
@@ -21,7 +21,7 @@
         <td>
           <a href="{% url 'menu:ingredient-update' ingredient.pk %}" class="view-link">Edit</a>
         </td>
-        <td style="background-color: transparent;">
+        <td class="bg-transparent">
           <a href="{% url 'menu:ingredient-delete' ingredient.pk %}" style="color: red"><i class="fa-regular fa-trash-can"></i></a>
         </td>
       </tr>
