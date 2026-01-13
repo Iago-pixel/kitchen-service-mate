@@ -79,6 +79,10 @@ td {
   color: #137200;
 }
 
+.form div {
+  margin-bottom: 15px;
+}
+
 .container-search input {
   border-radius: 50px 0 0 50px;
   width: 300px;
@@ -86,6 +90,16 @@ td {
 
 .container-search input::placeholder {
   color: #777
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: var(--orange);
+  color: black;
 }
 
 @media only screen and (max-width: 768px) {
