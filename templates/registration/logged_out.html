@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p>Logged out</p>
-<p>You have been logged out. <a href="{% url 'login' %}">Login again?</a></p>
+<div style="margin-left: 10%;">
+  <p style="font-size: 2rem; color: #999;">Logged out</p>
+  <p><i>You have been logged out. </i><a href="{% url 'login' %}">Login again?</a></p>
+</div>
+{% include 'includes/footer.html' %}
 {% endblock %}
