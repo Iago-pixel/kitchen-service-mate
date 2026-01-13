@@ -20,8 +20,8 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Type</th>
-        <th>Price</th>
+        <th class="hidden-in-tablet">Type</th>
+        <th class="hidden-in-tablet">Price</th>
         <th style="background-color: transparent;">
           <a class="add-link" href="{% url 'menu:dish-create' %}"><i class="fa-solid fa-plus"></i></a>
         </th>
@@ -31,8 +31,8 @@
       {% for dish in dish_list %}
         <tr>
           <td>{{ dish.name }}</td>
-          <td>{{ dish.dish_type.name }}</td>
-          <td>${{ dish.price }}</td>
+          <td class="hidden-in-tablet">{{ dish.dish_type.name }}</td>
+          <td class="hidden-in-tablet">${{ dish.price }}</td>
           <td><a href="{% url 'menu:dish-detail' dish.pk %}" class="view-link">View</a></td>
         </tr>
       {% empty %}

@@ -92,4 +92,8 @@ td {
   .hidden-in-tablet {
     display: none;
   }
+
+  .container-search input {
+  width: 200px;
+}
 }
