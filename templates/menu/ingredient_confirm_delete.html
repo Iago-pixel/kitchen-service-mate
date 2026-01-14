@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div style="margin-left: 10%;">
-  <h1 style="font-size: 2rem; color: var(--font-green); margin-bottom: 15px;">Delete Ingredient</h1>
+<div class="text-center" style="padding-top: 25px;">
+  <h1 style="font-size: 2.5rem; color: var(--font-green); margin-bottom: 15px; font-family: var(--font-title);">
+    Delete Ingredient
+  </h1>
 
-  <p>Are you sure you want to delete the ingredient: <u>{{ ingredient }}</u></p>
+  <p style="font-size: 20px; color: #999;">Are you sure you want to delete the ingredient: <u>{{ ingredient }}</u></p>
   <form action="" method="post">
     {% csrf_token %}
-    <button class="btn btn-danger" type="submit">Yes, delete</button>
+    <button class="btn btn-orange" type="submit" style="margin-top: 15px;">Yes, delete</button>
   </form>
-  {% include 'includes/footer.html' %}
+  <footer class="d-flex justify-content-center">
+    <img src="{% static 'img/index_footer.png' %}" alt="" height="50px" style="bottom: 20px; position: fixed;" class="hidden-in-tablet">
+  </footer>
 </div>
 {% endblock %}
