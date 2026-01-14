@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Delete Dish Type</h1>
+<div style="margin-left: 10%;">
+  <h1 style="font-size: 2rem; color: var(--font-green); margin-bottom: 15px;">Delete Dish Type</h1>
 
-  <p>Are you sure you want to delete the dish type: {{ dishtype }}</p>
+  <p>Are you sure you want to delete the dish type: <u>{{ dishtype }}</u></p>
   <p><i>All Dishes with this dish type will be also deleted</i></p>
   <form action="" method="post">
     {% csrf_token %}
     <button class="btn btn-danger" type="submit">Yes, delete</button>
   </form>
+  {% include 'includes/footer.html' %}
+</div>
 {% endblock %}
