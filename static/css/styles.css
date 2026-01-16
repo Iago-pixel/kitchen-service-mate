@@ -6,6 +6,20 @@
   --orange: #d26415;
 }
 
+/* index styles */
+
+.index-card {
+  width: 300px;
+  border: solid 1px var(--orange);
+  color: #7D7D7D;
+  background-color: var(--orange-light);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: #8E4600;
+}
+
 /* navbar styles */
 
 .navbar-container {
