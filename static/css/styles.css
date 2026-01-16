@@ -6,6 +6,8 @@
   --orange: #d26415;
 }
 
+/* navbar styles */
+
 .navbar-container {
   background-color: var(--orange);
   margin: 30px;
@@ -40,6 +42,8 @@
 .logout-button:hover {
   color: #000;
 }
+
+/* list page styles */
 
 .add-link {
   color: var(--orange);
@@ -79,6 +83,8 @@ td {
   color: #137200;
 }
 
+/* login styles */
+
 .login div {
   margin-bottom: 25px;
   font-size: 1.2rem;
@@ -87,6 +93,8 @@ td {
 .login label {
   margin-bottom: 5px;
 }
+
+/* form styles */
 
 .form > div {
   margin-bottom: 15px;
