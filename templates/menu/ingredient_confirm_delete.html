@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 <div class="text-center" style="padding-top: 25px;">
@@ -12,8 +11,6 @@
     {% csrf_token %}
     <button class="btn btn-orange" type="submit" style="margin-top: 15px;">Yes, delete</button>
   </form>
-  <footer class="d-flex justify-content-center">
-    <img src="{% static 'img/index_footer.png' %}" alt="" height="50px" style="bottom: 20px; position: fixed;" class="hidden-in-tablet">
-  </footer>
+  {% include 'includes/footer2.html' %}
 </div>
 {% endblock %}
