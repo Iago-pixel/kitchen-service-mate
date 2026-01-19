@@ -2,11 +2,7 @@
 {% load static %}
 
 {% block content %}
-  <div class="d-flex justify-content-evenly" style="margin-bottom: 25px;">
-    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
-    <h1 class="d-flex align-items-center" style="font-family: var(--font-title); color: var(--font-green);">Dish Type list <img style="margin-left: 10px;" src="{% static 'img/cook_img.png' %}" alt="" height="45px"></h1>
-    <img class="hidden-in-tablet" src="{% static 'img/list_title_img.png' %}" alt="" height="50px">
-  </div>
+  {% include 'includes/title.html' with title="Dish Type list" %}
   <table class="mx-auto">
     <tr>
       <th style="width: 200px;">Name</th>
