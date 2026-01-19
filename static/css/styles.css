@@ -6,20 +6,6 @@
   --orange: #d26415;
 }
 
-/* index styles */
-
-.index-card {
-  width: 300px;
-  border: solid 1px var(--orange);
-  color: #7D7D7D;
-  background-color: var(--orange-light);
-}
-
-.card-icon {
-  font-size: 1.5rem;
-  color: #8E4600;
-}
-
 /* navbar styles */
 
 .navbar-container {
@@ -55,6 +41,20 @@
 
 .logout-button:hover {
   color: #000;
+}
+
+/* index styles */
+
+.index-card {
+  width: 300px;
+  border: solid 1px var(--orange);
+  color: #7D7D7D;
+  background-color: var(--orange-light);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: #8E4600;
 }
 
 /* list page styles */
@@ -115,7 +115,7 @@ td {
 }
 
 .form input, .form textarea, .form select {
-  border: 1px solid var(--font-green)
+  border: 1px solid var(--font-green);
 }
 
 .container-search input {
