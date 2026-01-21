@@ -4,6 +4,11 @@
   --orange-light: rgb(210, 100, 21, 0.2);
   --orange-light-2: #F3C29E;
   --orange: #d26415;
+  --gray: #585858;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
 }
 
 /* navbar styles */
