@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="mx-auto" style="max-width: 400px; width: 90%; color: var(--gray);">
+    <h1 class="text-center" style="font-family: var(--font-title); color: var(--font-green);">
+      Username: {{ cook.username }}
+    </h1>
+    <div class="details-box">
+      <p>Name: {{ cook.first_name }} {{ cook.last_name }}</p>
+      <p>Email: {{ cook.email }}</p>
+    </div>
+    <h1 class="text-center" style="font-family: var(--font-title); color: var(--font-green);">
+      Dishes
+    </h1>
+    <div class="details-box">
+      <ul class="text-center">
+        {% for dish in cook.dishes.all %}
+          <li><a href="{{ dish.get_absolute_url }}" class="dish-link">{{ dish.name }}</a></li>
+        {% empty %}
+          <li>No dishes prepared by this cook.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="text-center" style="margin-top: 4rem;">
+      <a href="{% url 'menu:cook-list' %}" class="btn btn-orange" style="width: 170px;">Back to Cook List</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,186 @@
+:root {
+  --font-green: #147601;
+  --font-title: 'Lobster', sans-serif;
+  --orange-light: rgb(210, 100, 21, 0.2);
+  --orange-light-2: #F3C29E;
+  --orange: #d26415;
+  --gray: #585858;
+}
+
+body {
+  font-family: 'Questrial', sans-serif;
+}
+
+/* navbar styles */
+
+.navbar-container {
+  background-color: var(--orange);
+  margin: 30px;
+  border-radius: 20px;
+}
+
+.navbar-link {
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+.user-item {
+  border: solid 1px #fff;
+  border-radius: 20px;
+  font-weight: lighter;
+  padding: 0 10px;
+}
+
+.mobile-menu-icon {
+  font-size: 28px;
+  color: #fff;
+  border-color:#fff;
+}
+
+.logout-button {
+  color: #fff;
+  font-size: 28px;
+}
+
+.logout-button:hover {
+  color: #000;
+}
+
+/* index styles */
+
+.index-card {
+  width: 300px;
+  border: solid 1px var(--orange);
+  color: #7D7D7D;
+  background-color: var(--orange-light);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  color: #8E4600;
+}
+
+/* list page styles */
+
+.add-link {
+  color: var(--orange);
+  font-size: 1.5rem;
+}
+
+.add-link:hover {
+  color: #147601;
+}
+
+.view-link {
+  color: #137200;
+}
+
+.view-link:hover {
+  color: var(--orange);
+}
+
+table {
+  border-spacing: 10px;
+  border-collapse: separate;
+}
+
+th, td {
+  border-radius: 50px;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--orange-light-2);
+  color: var(--orange);
+}
+
+td {
+  background-color: #CEF7C5;
+  color: #137200;
+}
+
+/* login styles */
+
+.login div {
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.login label {
+  margin-bottom: 5px;
+}
+
+/* form styles */
+
+.form > div {
+  margin-bottom: 15px;
+}
+
+.form input, .form textarea, .form select {
+  border: 1px solid var(--font-green);
+}
+
+.container-search input {
+  border-radius: 50px 0 0 50px;
+  width: 300px;
+}
+
+.container-search input::placeholder {
+  color: #777
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: var(--orange);
+  color: black;
+}
+
+.btn-orange-2 {
+  color: var(--orange);
+  border: solid 2px var(--orange);
+  font-weight: 550;
+  padding: 4px 12px;
+  width: 75px;
+}
+
+.btn-orange-2:hover {
+  border: solid 2px black;
+  color: black;
+}
+
+/* cook detail styles */
+
+.details-box {
+  border: solid 2px var(--orange);
+  border-radius: 20px;
+  padding: 1rem 3rem 0;
+  margin: 2rem 0;
+}
+
+.dish-link {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.dish-link:hover {
+  text-decoration: underline;
+}
+
+/* responsive styles */
+
+@media only screen and (max-width: 768px) {
+  .hidden-in-tablet {
+    display: none;
+  }
+
+  .container-search input {
+  width: 200px;
+}
+}

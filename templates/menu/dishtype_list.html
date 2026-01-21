@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% include 'includes/title.html' with title="Dish Type list" %}
+  <table class="mx-auto">
+    <tr>
+      <th style="width: 200px;">Name</th>
+      <th style="width: 150px;">Edit</th>
+      <th class="bg-transparent">
+        <a class="add-link" href="{% url 'menu:dish-type-create' %}"><i class="fa-solid fa-plus"></i></a>
+      </th>
+    </tr>
+    {% for dishtype in dishtype_list %}
+      <tr>
+        <td>{{ dishtype.name }}</td>
+        <td>
+          <a href="{% url 'menu:dish-type-update' dishtype.pk %}" class="view-link">Edit</a>
+        </td>
+        <td class="bg-transparent">
+          <a href="{% url 'menu:dish-type-delete' dishtype.pk %}" class="view-link"><i class="fa-regular fa-trash-can"></i></a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="2">No dish types available.</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

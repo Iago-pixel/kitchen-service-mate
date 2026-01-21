@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% include 'includes/title.html' with title="Cook list" %}
+  <table class="mx-auto">
+    <tr>
+      <th>Full Name</th>
+      <th class="hidden-in-tablet">Username</th>
+      <th class="hidden-in-tablet">Years of Experience</th>
+      <th class="bg-transparent">
+        <a class="add-link" href="{% url 'menu:cook-create' %}"><i class="fa-solid fa-plus"></i></a>
+      </th>
+    </tr>
+    {% for cook in cook_list %}
+      <tr>
+        <td>{{ cook.first_name }} {{ cook.last_name }}</td>
+        <td class="hidden-in-tablet">{{ cook.username }}</td>
+        <td class="hidden-in-tablet">{{ cook.years_of_experience }}</td>
+        <td><a href="{{ cook.get_absolute_url }}" class="view-link">View</a></td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No cooks available.</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

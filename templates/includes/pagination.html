@@ -1,0 +1,26 @@
+{% load query_transform %}
+{% if is_paginated %}
+  <ul class="pagination d-flex justify-content-center">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?{% query_transform request page=page_obj.previous_page_number %}" style="background-color: var(--orange); color: white; border: none;">Prev</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link" style="background-color: var(--orange-light-2); color: white; border: none;">Prev</span>
+      </li>
+    {% endif %}
+    <li class="page-item">
+      <span class="page-link" style="background-color: var(--orange); color: white; border: none;">{{ page_obj.number }} of {{ paginator.num_pages }}</span>
+    </li>
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?{% query_transform request page=page_obj.next_page_number %}" style="background-color: var(--orange); color: white; border: none;">Next</a>
+      </li>
+    {% else %}
+      <li class="page-item disabled">
+        <span class="page-link" style="background-color: var(--orange-light-2); color: white; border: none;">Next</span>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block content %}
+  {% include 'includes/title.html' with title="Dish list" %}
+  <form action="" method="get" style="margin: 1rem 0 2rem">
+    <div class="input-group d-flex justify-content-center container-search">
+      {{ search_form|crispy }}
+      <button type="submit" class="btn" style="background-color: var(--orange); color: white; border-radius: 0 50px 50px 0;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </form>
+  <table class="mx-auto">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th class="hidden-in-tablet">Type</th>
+        <th class="hidden-in-tablet">Price</th>
+        <th class="bg-transparent">
+          <a class="add-link" href="{% url 'menu:dish-create' %}"><i class="fa-solid fa-plus"></i></a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dish in dish_list %}
+        <tr>
+          <td>{{ dish.name }}</td>
+          <td class="hidden-in-tablet">{{ dish.dish_type.name }}</td>
+          <td class="hidden-in-tablet">${{ dish.price }}</td>
+          <td><a href="{% url 'menu:dish-detail' dish.pk %}" class="view-link">View</a></td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="3">No dishes found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

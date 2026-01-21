@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  {% include 'includes/title.html' with title="Ingredient list" %}
+  <table class="mx-auto">
+    <tr>
+      <th style="width: 200px;">Name</th>
+      <th style="width: 150px;">Edit</th>
+      <th class="bg-transparent">
+        <a class="add-link" href="{% url 'menu:ingredient-create' %}"><i class="fa-solid fa-plus"></i></a>
+      </th>
+    </tr>
+    {% for ingredient in ingredient_list %}
+      <tr>
+        <td>{{ ingredient.name }}</td>
+        <td =>
+          <a href="{% url 'menu:ingredient-update' ingredient.pk %}" class="view-link">Edit</a>
+        </td>
+        <td class="bg-transparent">
+          <a href="{% url 'menu:ingredient-delete' ingredient.pk %}" class="view-link"><i class="fa-regular fa-trash-can"></i></a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No ingredients available.</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
