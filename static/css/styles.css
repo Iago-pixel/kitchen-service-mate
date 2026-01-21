@@ -142,6 +142,19 @@ td {
   color: black;
 }
 
+.btn-orange-2 {
+  color: var(--orange);
+  border: solid 2px var(--orange);
+  font-weight: 550;
+  padding: 4px 12px;
+  width: 75px;
+}
+
+.btn-orange-2:hover {
+  border: solid 2px black;
+  color: black;
+}
+
 @media only screen and (max-width: 768px) {
   .hidden-in-tablet {
     display: none;

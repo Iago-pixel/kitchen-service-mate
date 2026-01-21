@@ -1,19 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-  <h1>{{ dish.name }} <a style="float: right;" class="btn btn-secondary" href="{% url 'menu:dish-update' dish.pk %}">Edit</a></h1>
-  <p>Type: {{ dish.dish_type.name }}</p>
-  <p>Description: {{ dish.description }}</p>
-  <p>Price: ${{ dish.price }}</p>
+  <div class="mx-auto" style="max-width: 800px; width: 90%;">
+    <h1 class="d-flex align-items-center justify-content-center gap-5" style="font-family: var(--font-title); color: var(--font-green);">
+      {{ dish.name }}
+      <img src="{% static 'img/index_img_1.png' %}" alt="dish image" height="100px" class="hidden-in-tablet">
+    </h1>
+    <p>Type: {{ dish.dish_type.name }}</p>
+    <p>Description: {{ dish.description }}</p>
+    <p style="color: var(--gray);">
+      <strong>
+        Price:
+        <span style="color: var(--font-green);">${{ dish.price }}</span>
+      </strong>
+    </p>
 
-  <h2>Ingredients</h2>
-  <ul>
-    {% for ingredient in dish.ingredients.all %}
-      <li>{{ ingredient.name }}</li>
-    {% empty %}
-      <li>No ingredients listed.</li>
-    {% endfor %}
-  </ul>
+    <h2 style="color: var(--font-green); font-weight: bold;">Ingredients</h2>
+    <ul style="padding: 10px 15px 30px;">
+      {% for ingredient in dish.ingredients.all %}
+        <li>{{ ingredient.name }}</li>
+      {% empty %}
+        <li>No ingredients listed.</li>
+      {% endfor %}
+    </ul>
 
-  <a href="{% url 'menu:dish-list' %}">Back to Dish List</a>
+    <div class="d-flex align-items-center justify-content-center gap-5">
+      <a href="{% url 'menu:dish-list' %}" class="btn btn-orange" style="width: 150px;">Back to Dish List</a>
+      <a class="btn btn-orange-2" href="{% url 'menu:dish-update' dish.pk %}">Edit</a>
+    </div>
+  </div>
 {% endblock %}
