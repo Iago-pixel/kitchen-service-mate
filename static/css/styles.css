@@ -155,6 +155,26 @@ td {
   color: black;
 }
 
+/* cook detail styles */
+
+.details-box {
+  border: solid 2px var(--orange);
+  border-radius: 20px;
+  padding: 1rem 3rem 0;
+  margin: 2rem 0;
+}
+
+.dish-link {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+.dish-link:hover {
+  text-decoration: underline;
+}
+
+/* responsive styles */
+
 @media only screen and (max-width: 768px) {
   .hidden-in-tablet {
     display: none;
